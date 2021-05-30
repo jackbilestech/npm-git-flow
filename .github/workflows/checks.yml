@@ -22,3 +22,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       ######## test commands here ############
+      # unit tests
+      # e2e tests
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      ######## version commands here ############
+      # check version number
