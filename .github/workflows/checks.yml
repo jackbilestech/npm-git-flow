@@ -24,6 +24,7 @@ jobs:
       ######## test commands here ############
       # unit tests
       # e2e tests
+      # check coverage
   version:
     runs-on: ubuntu-latest
     steps:
