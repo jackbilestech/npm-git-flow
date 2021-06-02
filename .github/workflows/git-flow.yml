@@ -24,7 +24,14 @@ jobs:
       - uses: rlespinasse/github-slug-action@v3.x
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Get Commit Difference Count Between Two Branches
+        id: diff
+        uses: jessicalostinspace/commit-difference-action@v1.0.0
+        with:
+          base-branch: ${{ env.GITHUB_REF_SLUG }}
+          secondary-branch: develop
       - name: ${{ env.GITHUB_REF_SLUG }} -> develop
+        if: ${{ steps.diff.outputs.commit-difference-count }}
         uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
