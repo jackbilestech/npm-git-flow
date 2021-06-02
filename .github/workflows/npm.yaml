@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: 14
       - run: npm install
-      # - run: npm test
+      - run: npm test
       - uses: JS-DevTools/npm-publish@v1
         with:
-          token: ${{ secrets.NPM_TOKEN }}
+          token: ${{ secrets.NPM_TOKEN }} # https://docs.npmjs.com/creating-and-viewing-access-tokens
           access: "public"

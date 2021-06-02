@@ -5,7 +5,6 @@ name: checks
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
   pull_request:
 
   # Allows you to run this workflow manually from the Actions tab
@@ -22,3 +21,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       ######## test commands here ############
+      # unit tests
+      # e2e tests
+      # check coverage
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      ######## version commands here ############
+      # check version number
