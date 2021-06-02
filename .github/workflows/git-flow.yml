@@ -29,7 +29,7 @@ jobs:
         with:
           type: now
           target_branch: develop
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.ADMIN_TOKEN }}
       - name: Raise PR
         if: ${{ failure() }}
         uses: vsoch/pull-request-action@master
@@ -56,7 +56,7 @@ jobs:
         if: ${{ failure() }}
         uses: vsoch/pull-request-action@master
         env:
-         GITHUB_TOKEN: ${{ github.token }}
+         GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
          PULL_REQUEST_BRANCH: "next"
   update-release:
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next'
@@ -73,7 +73,7 @@ jobs:
         with:
           type: now
           target_branch: release
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.ADMIN_TOKEN }}
       - name: Raise PR
         if: ${{ failure() }}
         uses: vsoch/pull-request-action@master
